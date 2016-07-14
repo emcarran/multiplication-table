@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app='table'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table</title>
+    <!-- note that here we’re linking to a CDN version of Angular  -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div ng-controller="MultiplicationCtrl" initial-number-limit="10">
+
+        <table width="100%">
+            <tr>
+                <td colspan="{{numberLimit}}">
+                    <h2>Multiplication Table for
+                        <input type="number" ng-model="numberLimit" placeholder="number" />
+                    </h2>
+                    <h6>How to use nested ng-repeats in Angular</h6>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="{{numberLimit}}">
+                    <b>Legend:</bb> <span class="red">All the rows are RED</span> / <span class="blue">All the cells are BLUE</span>
+                </td>
+            </tr>
+            <!-- create one row at the time -->
+            <tr ng-repeat="rowNumber in numbers()">
+                <!-- and after that, create cells inside each row -->
+                <td ng-repeat="cellNumber in numbers()">
+                    <span class="red">row-{{rowNumber}}</span> x <span class="blue">cell-{{cellNumber}}</span>
+                    <br/> = <b>{{ compute (rowNumber, cellNumber)}}</b>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
+    <script src="myApp.js" type="text/javascript"></script>
+
+</body>
+
+</html>

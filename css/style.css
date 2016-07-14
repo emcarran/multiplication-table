@@ -1,0 +1,26 @@
+/*css styles*/
+
+body {
+    font-family: sans-serif;
+}
+
+td {
+    border: 1px solid #ddd;
+    width: auto;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.red,
+.blue {
+    font-size: 0.7rem;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
